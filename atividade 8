@@ -1,0 +1,25 @@
+Fazer um programa que calcule e imprima o fatorial de um número fornecido pelo usuário. Repetir a
+execução do programa tantas até o usuário responder não. O fatorial de um número inteiro positivo é
+definido como o número multiplicado por ele menos 1, menos 2, etc até o valor 1.
+
+def calcular_fatorial(numero):
+    fatorial = 1
+    for i in range(1, numero + 1):
+        fatorial *= i
+    return fatorial
+
+# Loop principal para repetir a execução do programa
+while True:
+    # Ler o número fornecido pelo usuário
+    numero = int(input("Entre com um número: "))
+
+    # Calcular o fatorial do número
+    resultado = calcular_fatorial(numero)
+
+    # Imprimir o resultado
+    print("O fatorial de", numero, "é", resultado)
+
+    # Perguntar ao usuário se ele deseja calcular outro número
+    continuar = input("Calcular outro número (s/n)? ")
+    if continuar.lower() != 's':
+        break
