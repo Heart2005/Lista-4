@@ -1,0 +1,82 @@
+Faça um algoritmo para:
+a. Gerar e escrever todos os números inteiros do intervalo [0,100].
+b. Gerar e escrever os números pares do intervalo [20,50].
+c. Gerar e escrever os números inteiros do intervalo [25,70] em ordem decrescente.
+d. Gerar e escrever os números ímpares do intervalo [25,95] em ordem decrescente.
+e. Ler 15 números e escrever a soma e a média dos números lidos.
+f. Ler 10 números inteiros e escrever a quantidade de números pares e a quantidade de números
+ímpares lidos.
+g. Sortear 20 números inteiros entre -10 e 10 e imprimi-los acompanhados da mensagem
+“POSITIVO”, “NEGATIVO”, ou “NULO”, conforme o caso. No final, imprimir a quantidade de
+números positivos e negativos lidos.
+h. Ler n números e imprimir no final a soma dos números lidos (obs.: n é a quantidade de números
+que deverão ser lidos e também deve ser lido do teclado)
+
+print("Todos os números inteiros do intervalo [0,100]:")
+for i in range(101):
+    print(i, end=" ")
+print("\n")
+
+print("Números pares do intervalo [20,50]:")
+for i in range(20, 51, 2):
+    print(i, end=" ")
+print("\n")
+
+print("Números inteiros do intervalo [25,70] em ordem decrescente:")
+for i in range(70, 24, -1):
+    print(i, end=" ")
+print("\n")
+
+print("Números ímpares do intervalo [25,95] em ordem decrescente:")
+for i in range(95, 24, -1):
+    if i % 2 != 0:
+        print(i, end=" ")
+print("\n")
+
+print("Ler 15 números, calcular a soma e a média:")
+soma = 0
+for _ in range(15):
+    num = int(input("Digite um número: "))
+    soma += num
+media = soma / 15
+print("Soma dos números:", soma)
+print("Média dos números:", media)
+
+print("Ler 10 números inteiros, contar pares e ímpares:")
+cont_pares = 0
+cont_impares = 0
+for _ in range(10):
+    num = int(input("Digite um número: "))
+    if num % 2 == 0:
+        cont_pares += 1
+    else:
+        cont_impares += 1
+print("Quantidade de números pares:", cont_pares)
+print("Quantidade de números ímpares:", cont_impares)
+
+import random
+
+print("Sortear 20 números inteiros entre -10 e 10 e classificá-los:")
+cont_positivos = 0
+cont_negativos = 0
+for _ in range(20):
+    num = random.randint(-10, 10)
+    print(num, end=" ")
+    if num > 0:
+        print("POSITIVO")
+        cont_positivos += 1
+    elif num < 0:
+        print("NEGATIVO")
+        cont_negativos += 1
+    else:
+        print("NULO")
+print("\nQuantidade de números positivos:", cont_positivos)
+print("Quantidade de números negativos:", cont_negativos)
+
+print("Ler n números e calcular a soma:")
+n = int(input("Digite a quantidade de números a serem lidos: "))
+soma = 0
+for _ in range(n):
+    num = int(input("Digite um número: "))
+    soma += num
+print("A soma dos números lidos é:", soma)
