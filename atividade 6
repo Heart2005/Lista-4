@@ -1,0 +1,24 @@
+Crie um algoritmo que sorteie 5 valores entre 0 e 100 e depois imprima o menor, o maior e a média
+dos valores sorteados
+
+import random
+
+# Lista para armazenar os valores sorteados
+valores = []
+
+# Sortear 5 valores entre 0 e 100 e armazená-los na lista
+for _ in range(5):
+    valores.append(random.randint(0, 100))
+
+# Encontrar o menor e o maior valor
+menor_valor = min(valores)
+maior_valor = max(valores)
+
+# Calcular a média dos valores
+media_valores = sum(valores) / len(valores)
+
+# Imprimir os resultados
+print("Valores sorteados:", valores)
+print("Menor valor:", menor_valor)
+print("Maior valor:", maior_valor)
+print("Média dos valores:", media_valores)
