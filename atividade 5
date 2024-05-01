@@ -1,0 +1,52 @@
+Para x alunos da Unisinos, ler as notas do grau A e grau B e calcular a média considerando o sistema
+de notas da Unisinos. Se o aluno estiver aprovado escrever “APROVADO”. Caso contrário, ler o grau C
+e pedir qual o grau que deve ser substituído (A ou B, maiúsculo ou minúsculo), recalcular a média. Se
+estiver aprovado, escrever “A
+
+def calcular_media_unisinos(grau_a, grau_b):
+    return (grau_a + 2 * grau_b) / 3.0
+
+# Número de alunos
+num_alunos = int(input("Digite o número de alunos: "))
+
+# Inicializar a soma das médias para calcular a média geral
+soma_medias = 0
+
+# Iterar sobre cada aluno
+for aluno in range(1, num_alunos + 1):
+    print("\nAluno", aluno)
+
+    # Ler as notas do Grau A e Grau B
+    grau_a = float(input("Digite a nota do Grau A: "))
+    grau_b = float(input("Digite a nota do Grau B: "))
+
+    # Calcular a média conforme o sistema de notas da Unisinos
+    media = calcular_media_unisinos(grau_a, grau_b)
+    print("Média do aluno:", media)
+
+    # Verificar se o aluno está aprovado ou precisa de recuperação
+    if media >= 7.0:
+        print("APROVADO")
+    else:
+        # Ler o Grau C
+        grau_c = float(input("Digite a nota do Grau C: "))
+        substituir = input("Qual o grau a ser substituído (A ou B)? ").upper()
+
+        # Recalcular a média conforme o grau substituído
+        if substituir == 'A':
+            media = calcular_media_unisinos(grau_c, grau_b)
+        elif substituir == 'B':
+            media = calcular_media_unisinos(grau_a, grau_c)
+
+        # Verificar se o aluno está aprovado após a recuperação
+        if media >= 7.0:
+            print("APROVADO")
+        else:
+            print("REPROVADO")
+
+    # Adicionar a média do aluno à soma das médias
+    soma_medias += media
+
+# Calcular a média geral dos alunos
+media_geral = soma_medias / num_alunos
+print("\nMédia geral dos alunos:", media_geral)
