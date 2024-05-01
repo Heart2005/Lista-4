@@ -1,0 +1,15 @@
+Descubra, dentre cinco nomes informados pelo usuário, qual o primeiro em ordem alfabética.
+
+# Lista para armazenar os nomes informados pelo usuário
+nomes = []
+
+# Pedir ao usuário para fornecer cinco nomes
+for i in range(5):
+    nome = input("Digite o {}º nome: ".format(i+1))
+    nomes.append(nome)
+
+# Encontrar o primeiro nome em ordem alfabética
+primeiro_nome = min(nomes)
+
+# Imprimir o primeiro nome em ordem alfabética
+print("O primeiro nome em ordem alfabética é:", primeiro_nome)
