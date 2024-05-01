@@ -1,0 +1,29 @@
+Implemente um programa que sorteia um número de 1 a 10 e dá ao usuário 3 tentativas de acertá-lo. A cada tentativa errada, o programa informa se o número a adivinhar está abaixo ou acima.
+
+import random
+
+# Sortear um número aleatório de 1 a 10
+numero_sorteado = random.randint(1, 10)
+
+# Número máximo de tentativas
+tentativas_maximas = 3
+
+print("Tente adivinhar o número sorteado entre 1 e 10. Você tem 3 tentativas.")
+
+# Loop para as tentativas
+for tentativa in range(1, tentativas_maximas + 1):
+    # Ler o palpite do usuário
+    palpite = int(input("Tentativa {}: Digite um número: ".format(tentativa)))
+
+    # Verificar se o palpite está correto
+    if palpite == numero_sorteado:
+        print("Parabéns! Você acertou o número!")
+        break
+    elif palpite < numero_sorteado:
+        print("O número sorteado é maior.")
+    else:
+        print("O número sorteado é menor.")
+
+# Se o usuário não acertar após 3 tentativas
+if tentativa == tentativas_maximas and palpite != numero_sorteado:
+    print("Suas tentativas acabaram. O número sorteado era:", numero_sorteado)
